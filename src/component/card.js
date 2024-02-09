@@ -1,4 +1,4 @@
-import React, {useCallback} from "react";
+import React from "react";
 
 const Card = (props) => {
     return (
@@ -12,11 +12,11 @@ const Card = (props) => {
                 </span>
             </span>
             <span className="content">
-            <img src={props.thumbnail} />
+            <img src={props.thumbnail} alt=""/>
             </span>
             <span className="footer">
                 <span className="up/down">
-                    <img src="" />
+                    <img src="" alt="" />
                     <p>{props.up}</p>
                     <p>{props.numberComments}</p>
                 </span>
