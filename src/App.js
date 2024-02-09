@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import { search } from './util/reddit';
+import React, { useState } from 'react'
+import Popular from './component/redditData';
 
 function App() {
+  const [redditData, setRedditData] = useState(['yo']);
+  const [keyWord, setKeyWord] = useState('')
+  
+  const handleSearch = (event) => {
+    const value = event.target.value;
+    setKeyWord(value)
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <body>
+        <p>
+          <input onChange={handleSearch} value={keyWord}/>
+          <button onClick={() => search(keyWord).then(setRedditData)}>
+            click me
+          </button>
+        </p>
+        <p>
+          <Popular cards={redditData} />
+        </p>
+      </body>
     </div>
   );
 }
