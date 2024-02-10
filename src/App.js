@@ -14,18 +14,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <nav>
+          <input onChange={handleSearch} value={keyWord}></input>
+          <button onClick={() => search(keyWord).then(setRedditData)}>Search</button>
+        </nav>
       </header>
-      <body>
-        <p>
-          <input onChange={handleSearch} value={keyWord}/>
-          <button onClick={() => search(keyWord).then(setRedditData)}>
-            click me
-          </button>
-        </p>
+      <main>
         <p>
           <Popular cards={redditData} />
         </p>
-      </body>
+      </main>
     </div>
   );
 }
