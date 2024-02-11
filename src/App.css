@@ -1,4 +1,4 @@
-.Card:has(h6:empty) {
+.Card:has(p:empty) {
   display: none;
 }
 html {
@@ -34,7 +34,7 @@ main {
 .titleHeader {
   display: flex;
   width: 90%;
-  justify-content: space-between;
+
 }
 
 .content {
@@ -50,10 +50,23 @@ main {
 }
 
 .subreddit {
- display: flex; 
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .subreddit img {
-  height: 20px;
-  width: 20px;
+  border-radius: 50%;
+}
+
+.author {
+  margin: 5%;
+}
+
+.arrow {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #32557f;
+  border-left: 0;
+  border-top: 0;
 }

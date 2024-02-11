@@ -91,7 +91,8 @@ export const search = async (search) => {
                     media: x.data.media,
                     ups: x.data.ups,
                     numberComments: x.data.num_comments,
-                    after: x.data.after
+                    after: x.data.after,
+                    author: x.data.author
                 }));
             });
         }

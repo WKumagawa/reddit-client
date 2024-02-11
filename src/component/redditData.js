@@ -14,6 +14,7 @@ const Popular = (props) => {
                 media={x.media}
                 up={x.ups}
                 numberComments={x.numberComments}
+                author={x.author}
 
                 />
             )

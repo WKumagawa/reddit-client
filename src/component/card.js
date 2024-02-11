@@ -14,8 +14,9 @@ const Card = (props) => {
         <div className='Card'>
             <span className='titleHeader'>
                 <span className="subreddit">
-                    <h6>{props.subreddit}</h6>
-                    <img src={iconImg} alt="" subIcon={handleSubIcon(props)}/>
+                    <img src={iconImg} alt=""/>
+                    <p>{props.subreddit}</p>
+                    <p className="author">{props.author}</p>
                 </span>
             </span>
             <span className="content">
@@ -26,10 +27,10 @@ const Card = (props) => {
             </span>
             <span className="footer">
                 <span className="up/down">
-                    <p>{props.up} upvotes</p>
+                    <p>&#8679; {props.up} upvotes</p>
                 </span>
                 <span className="comments">
-                    <p>{props.numberComments} Comments</p>
+                    <p>&#128488; {props.numberComments} Comments</p>
                 </span>
             </span>
         </div>

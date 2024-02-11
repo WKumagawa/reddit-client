@@ -1,7 +1,6 @@
 import './App.css';
-import { search } from './util/reddit';
+import { search } from '../util/reddit';
 import React, { useState } from 'react'
-import Popular from './component/redditData';
 
 function App() {
   const [redditData, setRedditData] = useState(['yo']);
@@ -21,7 +20,6 @@ function App() {
       </header>
       <main>
         <p>
-          <Popular cards={redditData} />
         </p>
       </main>
     </div>
