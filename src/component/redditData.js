@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './card';
 
-const Popular = (props) => {
+const RedditData = (props) => {
     return (
     <div className="popular">
         {props.cards.map((x) => {
@@ -15,7 +15,6 @@ const Popular = (props) => {
                 up={x.ups}
                 numberComments={x.numberComments}
                 author={x.author}
-
                 />
             )
         })}
@@ -23,4 +22,4 @@ const Popular = (props) => {
     );
 };
 
-export default Popular
+export default RedditData

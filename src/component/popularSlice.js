@@ -1,16 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { popular } from '../util/reddit';
 
 export const popularSlice = createSlice({
     name: 'popular',
-    initialState: popular(),
-    reducer: {
-        refresh: (state, action) => {
-            state = action.payload;
+    initialState: {
+        posts: []
+    },
+    reducers: {
+        reddit: (state, action) => {
+            state.posts = action.payload
         }
     }
 });
 
-export const selectPopular = (state) => state;
-export const { refresh } = popularSlice.actions;
+export const selectPopular = (state) => state.posts;
+export const { reddit } = popularSlice.actions;
 export default popularSlice.reducer;

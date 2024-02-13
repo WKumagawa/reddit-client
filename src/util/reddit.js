@@ -33,14 +33,15 @@ export const popular = async () => {
                     return [];
                 }
                 return jsonResponse.data.children.map(x => ({
-                   title: x.data.title,
-                   subreddit: x.data.subreddit_name_prefixed,
-                   thumbnail: x.data.thumbnail,
-                   commentsLink: x.data.permalink,
-                   media: x.data.media,
-                   ups: x.data.ups,
-                   numberComments: x.data.num_comments,
-                   after: x.data.after
+                    title: x.data.title,
+                    subreddit: x.data.subreddit_name_prefixed,
+                    thumbnail: x.data.thumbnail,
+                    commentsLink: x.data.permalink,
+                    media: x.data.media,
+                    ups: x.data.ups,
+                    numberComments: x.data.num_comments,
+                    after: x.data.after,
+                    author: x.data.author
                 }));
             });
         }

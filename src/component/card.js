@@ -1,20 +1,12 @@
-import React, {useState} from "react";
-import { subredditInfo } from "../util/reddit";
+import React from "react";
 
 const Card = (props) => {
-   const [iconImg, setIconImg] = useState();
-   const handleSubIcon = (props) => {
-    if(!props.subreddit) {
-        return ''
-    }
-    subredditInfo(props.subreddit).then(setIconImg)
-   }
     
     return (
         <div className='Card'>
             <span className='titleHeader'>
                 <span className="subreddit">
-                    <img src={iconImg} alt=""/>
+                    <img src='' alt=""/>
                     <p>{props.subreddit}</p>
                     <p className="author">{props.author}</p>
                 </span>
