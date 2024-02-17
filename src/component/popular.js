@@ -1,10 +1,4 @@
 import React from "react";
-//import { useSelector } from 'react-redux';
-//import { selectPopular } from "./popularSlice";
-//import { popular } from "../util/reddit";
-//import { useDispatch } from "react-redux";
-//import { reddit } from "./popularSlice";
-//import Card from "./card";
 
 export default function Popular(props) {
     

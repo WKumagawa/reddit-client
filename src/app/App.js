@@ -1,60 +1,41 @@
 import './App.css';
 import { search, popular } from '../util/reddit';
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import RedditData from '../component/redditData';
-import Popular from '../component/popular';
 import { useDispatch } from 'react-redux';
-import { reddit } from '../component/popularSlice';
-//import Popular from '../component/popular';
-//import { selectPopular } from '../component/popularSlice';
-//import { UseSelector } from 'react-redux';
-//import { Provider } from 'react-redux';
+import { selectPosts, addPosts} from '../component/redditSlice';
+import { useSelector } from 'react-redux';
+import Card from '../component/card';
 
 
 function App() {
-  const [redditData, setRedditData] = useState([]);
-  const [popularPosts, setPopularPosts] = useState([]);
-  const [keyWord, setKeyWord] = useState('')
+  // setting use states
+  const [keyWord, setKeyWord] = useState('');
+  const [posts, setPosts] = useState([])
+  // setup dispatch for store
   const dispatch = useDispatch();
+  //get posts from the store
+  //get popular posts if posts is empty
   useEffect(() => {
-      popular().then(setPopularPosts)
+    popular().then((x) => setPosts(x))
   }, []);
-  dispatch(reddit(popularPosts))
+  //set key word
 
-  /*
-  useEffect(() => {
-    popular().then(setRedditData);
-  }, []);
-  */
   const handleSearch = (event) => {
     const value = event.target.value;
     setKeyWord(value)
-  }
+  };
 
   return (
     <div className="App">
       <header className="App-header">
         <nav>
           <input onChange={handleSearch} value={keyWord}></input>
-          <button onClick={() => search(keyWord).then(setRedditData)}>Search</button>
+          <button onClick={() => {search(keyWord).then((x) => setPosts(x))}}>Search</button>
         </nav>
       </header>
       <main>
-        <RedditData cards={popularPosts} />
-        {popularPosts.map((x) => {
-          return(
-            <Popular
-              title={x.title}
-              subreddit={x.subreddit}
-              thumbnail={x.thumbnail}
-              commentsLink={x.commentsLink}
-              media={x.media}
-              up={x.ups}
-              numberComments={x.numberComments}
-              author={x.numberComments}
-            />
-        )})
-        }
+        <RedditData cards={posts}/>
       </main>
     </div>
   );

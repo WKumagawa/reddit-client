@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import popularReducer from '../component/popularSlice';
+import redditReducer from '../component/redditSlice';
 
 export default configureStore({
     reducer: {
-        popular: popularReducer,
+        reddit: redditReducer,
     },
 });
