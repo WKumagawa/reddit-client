@@ -1,0 +1,29 @@
+.Card:has(h6:empty) {
+  display: none;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid red;
+  border-radius: 25px;
+  width: 1000px;
+  box-shadow: 5px 10px;
+  margin-bottom: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.content {
+  display: flex;
+}
+
+.footer {
+  display: inline-flex
+}
